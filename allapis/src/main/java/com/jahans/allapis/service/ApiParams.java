@@ -2,14 +2,19 @@ package com.jahans.allapis.service;
 
 public class ApiParams {
 
-    /****** Random Integer *****/
-    private int randomNum;
+    public int requestNum = 0;
+    public  String version="1.0";
 
-    public int getRandomNum() {
-        return randomNum;
+    public int getRequestNum() {
+        return requestNum;
     }
 
-    public void setRandomNum(int randomNum) {
-        this.randomNum = randomNum;
+    public void setRequestNum(int requestNum) {
+        this.requestNum = requestNum;
     }
+
+    public String getVersion() {
+        return version;
+    }
+
 }

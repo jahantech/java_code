@@ -3,19 +3,26 @@ package com.jahans.allapis.service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Random;
-
 @RestController
 public class ApiController {
+    private ApiService apiService;
 
-    @RequestMapping("/randomNumber")
-    public int randomNumFunc(){
+    public ApiController(ApiService apiService) {
+        this.apiService = apiService;
+    }
 
+    @RequestMapping ("/random")
+    public int randomFuncServiceMethod(){
+        return apiService.randomNumFunc();
+    }
 
-        Random rand = new Random();
+    @RequestMapping ("/version")
+    public String getVersionFuncServiceMethod(){
+        return this.apiService.getApiVersion();
+    }
 
-        int  n = rand.nextInt(1000000) + 1;
-
-        return n;
+    @RequestMapping ("/count")
+    public int getRxCount(){
+        return this.apiService.totalRxCount();
     }
 }
