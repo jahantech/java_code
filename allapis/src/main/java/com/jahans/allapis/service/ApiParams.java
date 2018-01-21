@@ -5,6 +5,10 @@ public class ApiParams {
     public int requestNum = 0;
     public  String version="1.0";
 
+    public String dockerImage;
+    public String dockerImageVersion;
+    public String[] dockerCommands;
+
     public int getRequestNum() {
         return requestNum;
     }
@@ -16,5 +20,6 @@ public class ApiParams {
     public String getVersion() {
         return version;
     }
+
 
 }

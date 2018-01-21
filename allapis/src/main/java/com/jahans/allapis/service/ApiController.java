@@ -6,9 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ApiController {
     private ApiService apiService;
+    private ObjectService objectService;
 
     public ApiController(ApiService apiService) {
         this.apiService = apiService;
+    }
+
+    public ApiController(ObjectService objectService) {
+        this.objectService = objectService;
     }
 
     @RequestMapping ("/random")
@@ -25,4 +30,12 @@ public class ApiController {
     public int getRxCount(){
         return this.apiService.totalRxCount();
     }
+
+    @RequestMapping ("/runCommand")
+    public String resultDocker(){
+
+        return "works";
+    }
+
+
 }
