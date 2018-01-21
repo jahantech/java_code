@@ -1,9 +1,8 @@
 package com.jahans.allapis.service;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+
 public class ApiController {
     private ApiService apiService;
     private ObjectService objectService;
