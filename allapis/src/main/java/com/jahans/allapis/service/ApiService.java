@@ -12,23 +12,17 @@ public class ApiService {
         this.apiParams = new ApiParams();
 
     }
-
-    public void rxCountInc(){
-        this.apiParams.setRequestNum(this.apiParams.getRequestNum() + 1);
-    }
     public String getApiVersion(){
-        rxCountInc();
         return this.apiParams.getVersion();
     }
 
     public int randomNumFunc() {
-        rxCountInc();
         Random rand = new Random();
         int n = rand.nextInt(1000000) + 1;
         return n;
     }
 
     public int totalRxCount(){
-        return this.apiParams.requestNum;
+        return InterceptorMetrics.count;
     }
 }
